@@ -1,0 +1,101 @@
+﻿<Window x:Class="MasterFloor.View.PartnerEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MasterFloor.View"
+        mc:Ignorable="d"
+        Title="PartnerEdit" Height="800" Width="800" MinHeight="450" MinWidth="800"
+        Activated="Window_Activated">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="750" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="700" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition  />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="7" Orientation="Horizontal">
+                <Button  Content="Изменить" Name="editButton" Width="200"
+                         Click="Button_Click" />
+                <Button  Content="Назад"
+                         Width="200"
+                         Click="Button_Click_1" />
+                
+            </StackPanel>
+            <StackPanel Grid.Row="0">
+                <Label Content="Наиминование"/>
+                <TextBox x:Name="nameTB" />
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <Label Content="Тип партнёра" />
+                <ComboBox Name="typeCombo" />
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <Label Content="Рейтинг" />
+                <TextBox x:Name="ratingTB" />
+            </StackPanel>
+            <StackPanel Grid.Row="3">
+                <Label Content="Почтовый индекс" />
+                <TextBox x:Name="postNumberTB" />
+                <Label Content="Реигон" />
+                <TextBox x:Name="regionTB" />
+            </StackPanel>
+            <StackPanel Grid.Row="4">
+                <Label Content="Город" />
+                <TextBox x:Name="cityTB" />
+                <Label Content="Улица" />
+                <TextBox x:Name="streetTB" />
+            </StackPanel>
+            <StackPanel Grid.Row="5">
+                <Label Content="Номер дома" />
+                <TextBox x:Name="homeNumberTB" />
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <Label Content="Имя директора" />
+                <TextBox x:Name="directorNameTB" />
+                <Label Content="Фамилия директора" />
+                <TextBox x:Name="directorLastnameTB" />
+            </StackPanel>
+            <StackPanel Grid.Row="1"
+                        Grid.Column="1">
+                <Label Content="Отчество директора" />
+                <TextBox x:Name="surnameTB" />
+                <Label Content="Телефон" />
+                <TextBox x:Name="phoneTB" />
+            </StackPanel>
+            <StackPanel Grid.Row="2"
+                        Grid.Column="1">
+                <Label Content="Email" />
+                <TextBox x:Name="emailTB" />
+                <Label Content="INN" />
+                <TextBox x:Name="innTB" />
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="1"
+                        >
+                <Button  Content="Просмотр истории"
+                         Width="350"
+                         Height="90"
+                         Click="Button_Click_2" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

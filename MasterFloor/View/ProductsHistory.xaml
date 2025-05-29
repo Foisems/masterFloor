@@ -1,0 +1,50 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MasterFloor.View"
+        xmlns:ViewModel="clr-namespace:MasterFloor.ViewModel"
+        x:Class="MasterFloor.View.ProductsHistory"
+        mc:Ignorable="d"
+        Title="ProductsHistory"
+        Height="450"
+        Width="800"
+        Loaded="Window_Loaded">
+    <Window.DataContext>
+        <ViewModel:HistoryViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="700" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="300" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button Grid.Column="1"
+                Grid.Row="2"
+                Content="Назад" />
+        <ListView x:Name="PartnersListView"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Background="#FFF4E8D3"
+                  ItemsSource="{Binding HistoryList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Product.Name}" />
+                        <TextBlock Text="{Binding Count}" />
+                        <TextBlock Text="{Binding SellDate}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="1"
+                   x:Name="TitleTextBlock"
+                   FontWeight="Bold" />
+    </Grid>
+</Window>
